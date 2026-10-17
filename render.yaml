@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: figea
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: FIGEA_MODEL
+        value: claude-opus-5-5
+      - key: FIGEA_EFFORT
+        value: low
+      - key: FIGEA_RATE_LIMIT
+        value: "30"

@@ -1,0 +1,61 @@
+{
+  "niveaux": [
+    { "code": "AUCUN", "rang": 0, "label": "Sans diplôme / niveau primaire" },
+    { "code": "CEP", "rang": 1, "label": "CEP / FSLC (fin du primaire)" },
+    { "code": "BEPC", "rang": 2, "label": "BEPC / CAP / GCE O Level (fin du 1er cycle)" },
+    { "code": "PROBATOIRE", "rang": 3, "label": "Probatoire / niveau Terminale / Lower Sixth" },
+    { "code": "BAC", "rang": 4, "label": "Baccalauréat / GCE A Level" },
+    { "code": "BAC2", "rang": 5, "label": "Bac+2 : BTS, HND, DUT, DEUG" },
+    { "code": "LICENCE", "rang": 6, "label": "Bac+3 : Licence / Bachelor" },
+    { "code": "MASTER", "rang": 7, "label": "Bac+5 : Master / Ingénieur" }
+  ],
+  "series": [
+    { "code": "A", "label": "Bac A (littéraire : A1 à A5)", "famille": "litteraire" },
+    { "code": "C", "label": "Bac C (Mathématiques et Sciences physiques)", "famille": "scientifique" },
+    { "code": "D", "label": "Bac D (Mathématiques et Sciences de la vie et de la Terre)", "famille": "scientifique" },
+    { "code": "E", "label": "Bac E (Mathématiques et Technique)", "famille": "scientifique" },
+    { "code": "TI", "label": "Bac TI (Technologies de l'information)", "famille": "scientifique" },
+    { "code": "TECH_IND", "label": "Bac technique industriel (F1–F8, MA, MEM, IH…)", "famille": "technique" },
+    { "code": "TECH_TERT", "label": "Bac technique tertiaire (G1, G2, G3 / ACA, ACC, CG…)", "famille": "technique" },
+    { "code": "GCE_SCI", "label": "GCE A Level – Science", "famille": "scientifique", "equivalent": ["C", "D"] },
+    { "code": "GCE_ARTS", "label": "GCE A Level – Arts", "famille": "litteraire", "equivalent": ["A"] },
+    { "code": "GCE_COM", "label": "GCE A Level – Commercial / Technical", "famille": "technique", "equivalent": ["TECH_TERT", "TECH_IND"] }
+  ],
+  "domaines": [
+    "Ingénierie & BTP",
+    "Informatique & Télécoms",
+    "Santé & Médecine",
+    "Agronomie & Environnement",
+    "Commerce, Gestion & Finance",
+    "Droit & Sciences politiques",
+    "Lettres, Langues & Sciences humaines",
+    "Sciences fondamentales",
+    "Éducation & Enseignement",
+    "Journalisme & Communication",
+    "Administration & Relations internationales",
+    "Arts, Design & Culture",
+    "Hôtellerie, Tourisme & Restauration",
+    "Métiers techniques & Artisanat",
+    "Sport",
+    "Théologie & Philosophie"
+  ],
+  "diplomes": {
+    "CQP": "Certificat de Qualification Professionnelle (MINEFOP). Formation courte, accessible sans diplôme ou avec le CEP. Mène directement à un métier (couture, coiffure, maçonnerie, électricité bâtiment, etc.).",
+    "DQP": "Diplôme de Qualification Professionnelle (MINEFOP). Accessible en général avec le niveau BEPC / 3e. Formation plus longue que le CQP, débouchant sur un emploi qualifié ou l'auto-emploi.",
+    "CAP": "Certificat d'Aptitude Professionnelle (MINESEC), préparé dans les CETIC / lycées techniques.",
+    "BTS": "Brevet de Technicien Supérieur (MINESUP), Bac+2, préparé surtout dans les IPES. Examen national.",
+    "HND": "Higher National Diploma, équivalent anglophone du BTS (Bac+2).",
+    "DUT": "Diplôme Universitaire de Technologie, Bac+2, délivré par les IUT (entrée sur concours ou étude de dossier).",
+    "Licence": "Bac+3. Licence académique (facultés) ou licence professionnelle (IUT, IPES, écoles).",
+    "Master": "Bac+5. Master recherche ou professionnel.",
+    "Ingénieur": "Diplôme d'ingénieur (Bac+5), délivré par les écoles polytechniques et écoles d'ingénieurs, généralement après concours.",
+    "Doctorat": "Bac+8. Préparé dans les écoles doctorales des universités."
+  },
+  "conseils_generaux": [
+    "Les universités d'État ont des droits universitaires de 50 000 FCFA par an dans les facultés classiques (hors frais annexes) ; l'accès en faculté se fait en général sur dossier après le Bac.",
+    "Les grandes écoles publiques (Polytechnique, ENS, ENSTP, ESSEC, ENAM, IRIC, ESSTIC, FMSB…) recrutent par concours : les avis de concours sont publiés par le MINESUP ou le ministère de tutelle, souvent entre juin et septembre.",
+    "Les IPES (Instituts Privés d'Enseignement Supérieur) sont agréés par le MINESUP et souvent sous tutelle académique d'une université d'État : vérifie toujours l'agrément et l'université de tutelle avant de t'inscrire.",
+    "Le BTS et le HND sont des examens nationaux : un IPES prépare le candidat, mais le diplôme est délivré par l'État.",
+    "Pour la formation professionnelle (CQP, DQP), le MINEFOP agrée des centres publics et privés ; renseigne-toi à la délégation départementale du MINEFOP la plus proche."
+  ]
+}

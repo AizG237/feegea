@@ -1,0 +1,896 @@
+{
+  "version": "2026-10-mvp",
+  "avertissement": "Données de démarrage compilées pour le MVP Figea. Les frais, dates de concours et listes de filières changent chaque année : chaque fiche doit être vérifiée auprès de l'établissement ou du MINESUP/MINEFOP avant d'être considérée comme fiable (champ 'verifie').",
+  "ecoles": [
+    {
+      "id": "ensp-yaounde",
+      "nom": "École Nationale Supérieure Polytechnique de Yaoundé",
+      "sigle": "ENSP / Polytech Yaoundé",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Université de Yaoundé I",
+      "description": "La plus ancienne école d'ingénieurs du Cameroun. Formation d'ingénieurs de conception en 5 ans, très sélective.",
+      "admission": "Concours national (niveau 1 après le Bac, niveau 3 après une Licence ou équivalent).",
+      "frais_indicatifs": "Environ 50 000 FCFA de droits universitaires + frais spécifiques de l'école (à vérifier).",
+      "site": "https://polytechnique.cm",
+      "filieres": [
+        { "nom": "Génie civil", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "E", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Génie électrique et télécommunications", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "E", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Génie informatique", "domaine": "Informatique & Télécoms", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "E", "TI", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Génie industriel et génie mécanique", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "E", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Génie des procédés / génie chimique", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Entrée directe en 3e année (toutes spécialités)", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "enstp-yaounde",
+      "nom": "École Nationale Supérieure des Travaux Publics",
+      "sigle": "ENSTP",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Ministère des Travaux Publics (tutelle académique : Université de Yaoundé I)",
+      "description": "École de référence pour les métiers du BTP, de la topographie, de l'urbanisme et des transports. Forme des techniciens supérieurs et des ingénieurs.",
+      "admission": "Concours (cycle ingénieur et cycle technicien).",
+      "frais_indicatifs": "À vérifier auprès de l'école (frais plus élevés pour les candidats libres / non boursiers).",
+      "site": "https://enstp.cm",
+      "filieres": [
+        { "nom": "Génie civil (bâtiment, routes, ouvrages d'art)", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur", "Licence"], "niveau": "BAC", "series": ["C", "D", "E", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "3 à 5 ans" },
+        { "nom": "Topographie et géomatique", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur", "Licence"], "niveau": "BAC", "series": ["C", "D", "E", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "3 à 5 ans" },
+        { "nom": "Génie urbain et urbanisme", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Génie rural / hydraulique", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Transport et logistique", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence"], "niveau": "BAC", "series": ["C", "D", "E", "GCE_SCI"], "admission": "concours", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "ens-yaounde",
+      "nom": "École Normale Supérieure de Yaoundé",
+      "sigle": "ENS Yaoundé",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Université de Yaoundé I",
+      "description": "Forme les professeurs de l'enseignement secondaire général (PLEG, PCEG). Les admis au 1er cycle deviennent fonctionnaires après formation.",
+      "admission": "Concours : 1er cycle après le Bac, 2nd cycle après la Licence.",
+      "frais_indicatifs": "Droits universitaires (environ 50 000 FCFA) ; à vérifier.",
+      "filieres": [
+        { "nom": "Professeur de mathématiques / physique / chimie / informatique", "domaine": "Éducation & Enseignement", "diplomes": ["DIPES I", "DIPES II"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "GCE_SCI"], "admission": "concours", "duree": "3 ans (DIPES I)" },
+        { "nom": "Professeur de SVT / sciences de la Terre", "domaine": "Éducation & Enseignement", "diplomes": ["DIPES I", "DIPES II"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Professeur de lettres, langues, histoire-géographie, philosophie", "domaine": "Éducation & Enseignement", "diplomes": ["DIPES I", "DIPES II"], "niveau": "BAC", "series": ["A", "GCE_ARTS"], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Conseiller d'orientation", "domaine": "Éducation & Enseignement", "diplomes": ["DIPCO"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "2 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "fmsb-yaounde",
+      "nom": "Faculté de Médecine et des Sciences Biomédicales",
+      "sigle": "FMSB",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Université de Yaoundé I",
+      "description": "Faculté de médecine historique du Cameroun (ex-CUSS). Formation en médecine, pharmacie et odontostomatologie. Accès très sélectif.",
+      "admission": "Concours national commun d'entrée dans les facultés de médecine publiques.",
+      "frais_indicatifs": "À vérifier (droits universitaires + frais de formation).",
+      "filieres": [
+        { "nom": "Médecine générale", "domaine": "Santé & Médecine", "diplomes": ["Doctorat en médecine"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "7 ans" },
+        { "nom": "Pharmacie", "domaine": "Santé & Médecine", "diplomes": ["Doctorat en pharmacie"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "6 ans" },
+        { "nom": "Odontostomatologie (chirurgie dentaire)", "domaine": "Santé & Médecine", "diplomes": ["Doctorat"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "6 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "uy1",
+      "nom": "Université de Yaoundé I",
+      "sigle": "UY1",
+      "categorie": "universite_publique",
+      "statut": "public",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "MINESUP",
+      "description": "Université d'État. Facultés : Sciences (FS), Arts, Lettres et Sciences Humaines (FALSH), Sciences de l'Éducation (FSE). Écoles rattachées : ENSP, ENS, FMSB.",
+      "admission": "Facultés : inscription sur dossier après le Bac. Écoles : concours.",
+      "frais_indicatifs": "50 000 FCFA de droits universitaires par an en faculté.",
+      "site": "https://www.uy1.uninet.cm",
+      "filieres": [
+        { "nom": "Mathématiques", "domaine": "Sciences fondamentales", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": ["C", "E", "GCE_SCI"], "admission": "dossier", "duree": "3 ans (Licence)" },
+        { "nom": "Informatique", "domaine": "Informatique & Télécoms", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "GCE_SCI"], "admission": "dossier", "duree": "3 ans (Licence)" },
+        { "nom": "Physique, Chimie", "domaine": "Sciences fondamentales", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": ["C", "D", "E", "GCE_SCI"], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Biologie (animale, végétale), Biochimie, Microbiologie", "domaine": "Sciences fondamentales", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Sciences de la Terre", "domaine": "Sciences fondamentales", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Lettres modernes françaises / anglaises, langues étrangères", "domaine": "Lettres, Langues & Sciences humaines", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Histoire, Géographie, Sociologie, Psychologie, Philosophie, Anthropologie", "domaine": "Lettres, Langues & Sciences humaines", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Arts du spectacle et cinématographie, Arts plastiques", "domaine": "Arts, Design & Culture", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Sciences de l'éducation", "domaine": "Éducation & Enseignement", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "uy2",
+      "nom": "Université de Yaoundé II",
+      "sigle": "UY2 (Soa)",
+      "categorie": "universite_publique",
+      "statut": "public",
+      "ville": "Soa (Yaoundé)",
+      "region": "Centre",
+      "tutelle": "MINESUP",
+      "description": "Université d'État spécialisée en droit, sciences politiques, économie et gestion. Écoles rattachées : ESSTIC, IRIC, IFORD.",
+      "admission": "Facultés : dossier après le Bac. Écoles : concours.",
+      "frais_indicatifs": "50 000 FCFA de droits universitaires par an en faculté.",
+      "filieres": [
+        { "nom": "Droit privé, Droit public, Droit des affaires", "domaine": "Droit & Sciences politiques", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Science politique", "domaine": "Droit & Sciences politiques", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Sciences économiques", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": ["A", "C", "D", "E", "TECH_TERT", "GCE_SCI", "GCE_COM", "GCE_ARTS"], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Sciences de gestion (comptabilité, finance, marketing)", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "esstic",
+      "nom": "École Supérieure des Sciences et Techniques de l'Information et de la Communication",
+      "sigle": "ESSTIC",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Université de Yaoundé II",
+      "description": "École de référence en journalisme, communication, publicité, édition et documentation.",
+      "admission": "Concours après le Bac (licence) et après la Licence (master).",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Journalisme", "domaine": "Journalisme & Communication", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Communication des organisations / relations publiques", "domaine": "Journalisme & Communication", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Publicité", "domaine": "Journalisme & Communication", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Sciences de l'information documentaire (archives, bibliothèques)", "domaine": "Journalisme & Communication", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Édition et arts graphiques", "domaine": "Arts, Design & Culture", "diplomes": ["Licence"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "iric",
+      "nom": "Institut des Relations Internationales du Cameroun",
+      "sigle": "IRIC",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Université de Yaoundé II",
+      "description": "Forme diplomates, cadres des organisations internationales, spécialistes du contentieux international et de la coopération.",
+      "admission": "Concours, principalement après une Licence (cycle master).",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Diplomatie", "domaine": "Administration & Relations internationales", "diplomes": ["Master"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "2 ans" },
+        { "nom": "Contentieux international", "domaine": "Droit & Sciences politiques", "diplomes": ["Master"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "2 ans" },
+        { "nom": "Coopération internationale, action humanitaire et développement", "domaine": "Administration & Relations internationales", "diplomes": ["Master"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "2 ans" },
+        { "nom": "Communication et action publique internationale", "domaine": "Journalisme & Communication", "diplomes": ["Master"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "2 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "enam",
+      "nom": "École Nationale d'Administration et de Magistrature",
+      "sigle": "ENAM",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Ministère de la Fonction Publique (MINFOPRA)",
+      "description": "Forme les hauts cadres de l'administration : administrateurs civils, magistrats, inspecteurs des impôts, du trésor, des douanes, greffiers, etc. Les admis intègrent la fonction publique.",
+      "admission": "Concours direct (division supérieure après Licence/Master, division normale après le Bac pour certaines filières) et concours professionnels.",
+      "frais_indicatifs": "Formation publique ; frais de dossier de concours à vérifier.",
+      "filieres": [
+        { "nom": "Administration générale (administrateur civil)", "domaine": "Administration & Relations internationales", "diplomes": ["Diplôme ENAM"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "2 ans" },
+        { "nom": "Magistrature (judiciaire et administrative)", "domaine": "Droit & Sciences politiques", "diplomes": ["Diplôme ENAM"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "2 ans" },
+        { "nom": "Régies financières (impôts, trésor, douanes)", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Diplôme ENAM"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "2 ans" },
+        { "nom": "Greffes et contrôleurs (division normale)", "domaine": "Administration & Relations internationales", "diplomes": ["Diplôme ENAM"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "2 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "sup-ptic",
+      "nom": "École Nationale Supérieure des Postes, des Télécommunications et des TIC",
+      "sigle": "SUP'PTIC",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Ministère des Postes et Télécommunications (MINPOSTEL)",
+      "description": "École spécialisée en télécommunications, réseaux, informatique et management des TIC. Forme ingénieurs et techniciens supérieurs.",
+      "admission": "Concours (après le Bac et après Bac+2/Licence).",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Ingénieur des télécommunications", "domaine": "Informatique & Télécoms", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Réseaux et sécurité informatique", "domaine": "Informatique & Télécoms", "diplomes": ["Licence", "Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "3 à 5 ans" },
+        { "nom": "Management des TIC et services postaux", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "injs",
+      "nom": "Institut National de la Jeunesse et des Sports",
+      "sigle": "INJS",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Ministère des Sports et de l'Éducation Physique (MINSEP)",
+      "description": "Forme les professeurs et conseillers d'éducation physique et sportive (EPS) et les cadres du sport.",
+      "admission": "Concours avec épreuves écrites et physiques.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Professeur d'EPS", "domaine": "Sport", "diplomes": ["Diplôme de professeur d'EPS"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Management du sport / animation", "domaine": "Sport", "diplomes": ["Licence"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "udouala",
+      "nom": "Université de Douala",
+      "sigle": "UD",
+      "categorie": "universite_publique",
+      "statut": "public",
+      "ville": "Douala",
+      "region": "Littoral",
+      "tutelle": "MINESUP",
+      "description": "Université d'État de la capitale économique. Facultés : Sciences, Lettres et Sciences Humaines, Sciences Juridiques et Politiques, Sciences Économiques et Gestion Appliquée, Médecine et Sciences Pharmaceutiques. Écoles rattachées : ESSEC, ENSPD, ENSET, IUT de Douala.",
+      "admission": "Facultés : dossier. Écoles et IUT : concours.",
+      "frais_indicatifs": "50 000 FCFA de droits universitaires par an en faculté.",
+      "site": "https://www.univ-douala.com",
+      "filieres": [
+        { "nom": "Mathématiques, Informatique, Physique, Chimie", "domaine": "Sciences fondamentales", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "GCE_SCI"], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Biologie, Biochimie", "domaine": "Sciences fondamentales", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Droit et science politique", "domaine": "Droit & Sciences politiques", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Économie et gestion appliquée", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Lettres, langues, histoire, géographie, sociologie", "domaine": "Lettres, Langues & Sciences humaines", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Médecine, pharmacie (FMSP)", "domaine": "Santé & Médecine", "diplomes": ["Doctorat"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "6 à 7 ans" },
+        { "nom": "Sciences infirmières, techniques médico-sanitaires (FMSP)", "domaine": "Santé & Médecine", "diplomes": ["Licence"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "essec-douala",
+      "nom": "École Supérieure des Sciences Économiques et Commerciales",
+      "sigle": "ESSEC Douala",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Douala",
+      "region": "Littoral",
+      "tutelle": "Université de Douala",
+      "description": "Grande école publique de commerce et de management. Forme des cadres en gestion, comptabilité, finance, marketing et logistique.",
+      "admission": "Concours après le Bac (cycle licence) et après la Licence (cycle master).",
+      "frais_indicatifs": "À vérifier (frais plus élevés que les facultés).",
+      "filieres": [
+        { "nom": "Comptabilité, contrôle et audit", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": ["A", "C", "D", "E", "TECH_TERT", "GCE_SCI", "GCE_COM"], "admission": "concours", "duree": "3 + 2 ans" },
+        { "nom": "Banque, finance, assurance", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": ["A", "C", "D", "E", "TECH_TERT", "GCE_SCI", "GCE_COM"], "admission": "concours", "duree": "3 + 2 ans" },
+        { "nom": "Marketing, commerce, vente", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 + 2 ans" },
+        { "nom": "Logistique et transport", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 + 2 ans" },
+        { "nom": "Gestion des ressources humaines", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Master"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "2 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "enspd",
+      "nom": "École Nationale Supérieure Polytechnique de Douala",
+      "sigle": "ENSPD",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Douala",
+      "region": "Littoral",
+      "tutelle": "Université de Douala",
+      "description": "École d'ingénieurs publique de Douala, orientée génie industriel et technologies.",
+      "admission": "Concours après le Bac et entrée parallèle après Bac+2/Licence.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Génie civil", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur", "Licence"], "niveau": "BAC", "series": ["C", "E", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Génie électrique, énergétique", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur", "Licence"], "niveau": "BAC", "series": ["C", "E", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Génie informatique et télécommunications", "domaine": "Informatique & Télécoms", "diplomes": ["Ingénieur", "Licence"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Génie mécanique et productique", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur", "Licence"], "niveau": "BAC", "series": ["C", "E", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Génie des procédés, maritime et portuaire", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "GCE_SCI"], "admission": "concours", "duree": "5 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "enset-douala",
+      "nom": "École Normale Supérieure d'Enseignement Technique de Douala",
+      "sigle": "ENSET Douala",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Douala",
+      "region": "Littoral",
+      "tutelle": "Université de Douala",
+      "description": "Forme les professeurs de l'enseignement technique (lycées techniques, CETIC) dans les spécialités industrielles et tertiaires.",
+      "admission": "Concours après le Bac (DIPET I) et après la Licence (DIPET II).",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Professeur d'enseignement technique industriel (génie civil, électrique, mécanique, informatique)", "domaine": "Éducation & Enseignement", "diplomes": ["DIPET I", "DIPET II"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Professeur d'enseignement technique tertiaire (comptabilité, commerce, secrétariat)", "domaine": "Éducation & Enseignement", "diplomes": ["DIPET I", "DIPET II"], "niveau": "BAC", "series": ["TECH_TERT", "A", "GCE_COM"], "admission": "concours", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "iut-douala",
+      "nom": "Institut Universitaire de Technologie de Douala",
+      "sigle": "IUT Douala",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Douala",
+      "region": "Littoral",
+      "tutelle": "Université de Douala",
+      "description": "Formation technologique courte et professionnalisante (DUT en 2 ans, licence professionnelle). Très bon taux d'insertion.",
+      "admission": "Concours / étude de dossier après le Bac.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Génie informatique", "domaine": "Informatique & Télécoms", "diplomes": ["DUT", "Licence"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "2 + 1 ans" },
+        { "nom": "Génie électrique, génie mécanique et productique, génie thermique", "domaine": "Ingénierie & BTP", "diplomes": ["DUT", "Licence"], "niveau": "BAC", "series": ["C", "E", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "2 + 1 ans" },
+        { "nom": "Génie civil", "domaine": "Ingénierie & BTP", "diplomes": ["DUT", "Licence"], "niveau": "BAC", "series": ["C", "D", "E", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "2 + 1 ans" },
+        { "nom": "Gestion des entreprises et des administrations (GEA), Gestion logistique et transport", "domaine": "Commerce, Gestion & Finance", "diplomes": ["DUT", "Licence"], "niveau": "BAC", "series": ["A", "C", "D", "TECH_TERT", "GCE_COM", "GCE_SCI"], "admission": "concours", "duree": "2 + 1 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "udschang",
+      "nom": "Université de Dschang",
+      "sigle": "UDs",
+      "categorie": "universite_publique",
+      "statut": "public",
+      "ville": "Dschang",
+      "region": "Ouest",
+      "tutelle": "MINESUP",
+      "description": "Université d'État réputée pour l'agronomie (FASA). Facultés : Sciences, Lettres, Droit, Économie-Gestion, Médecine. Écoles rattachées : FASA, IUT Fotso Victor de Bandjoun, Institut des Beaux-Arts de Foumban.",
+      "admission": "Facultés : dossier. FASA, IUT, IBAF, Médecine : concours.",
+      "frais_indicatifs": "50 000 FCFA de droits universitaires par an en faculté.",
+      "filieres": [
+        { "nom": "Sciences (maths, informatique, physique, chimie, biologie)", "domaine": "Sciences fondamentales", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "GCE_SCI"], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Droit, science politique, économie, gestion", "domaine": "Droit & Sciences politiques", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Lettres, langues, géographie, tourisme", "domaine": "Lettres, Langues & Sciences humaines", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Médecine et sciences pharmaceutiques", "domaine": "Santé & Médecine", "diplomes": ["Doctorat"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "7 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "fasa",
+      "nom": "Faculté d'Agronomie et des Sciences Agricoles",
+      "sigle": "FASA",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Dschang",
+      "region": "Ouest",
+      "tutelle": "Université de Dschang",
+      "description": "Principale école d'ingénieurs agronomes du Cameroun (héritière de l'ENSA).",
+      "admission": "Concours après le Bac.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Ingénieur agronome (productions végétales et animales)", "domaine": "Agronomie & Environnement", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Eaux, forêts et faune", "domaine": "Agronomie & Environnement", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "5 ans" },
+        { "nom": "Économie et sociologie rurales, génie rural", "domaine": "Agronomie & Environnement", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "5 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "iut-fv-bandjoun",
+      "nom": "Institut Universitaire de Technologie Fotso Victor de Bandjoun",
+      "sigle": "IUT-FV Bandjoun",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Bandjoun",
+      "region": "Ouest",
+      "tutelle": "Université de Dschang",
+      "description": "IUT réputé pour le génie informatique, le génie électrique et les télécoms ; DUT, licences professionnelles et cycle ingénieur des travaux.",
+      "admission": "Concours après le Bac.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Génie informatique, réseaux et télécommunications", "domaine": "Informatique & Télécoms", "diplomes": ["DUT", "Licence", "Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "2 à 5 ans" },
+        { "nom": "Génie électrique, génie mécanique, génie civil", "domaine": "Ingénierie & BTP", "diplomes": ["DUT", "Licence"], "niveau": "BAC", "series": ["C", "E", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "2 à 3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "ibaf-foumban",
+      "nom": "Institut des Beaux-Arts de Foumban",
+      "sigle": "IBAF",
+      "categorie": "grande_ecole_publique",
+      "statut": "public",
+      "ville": "Foumban",
+      "region": "Ouest",
+      "tutelle": "Université de Dschang",
+      "description": "Institut public dédié aux arts plastiques, à l'architecture, au design et aux métiers du patrimoine.",
+      "admission": "Concours.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Arts plastiques, design, cinéma et audiovisuel", "domaine": "Arts, Design & Culture", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Architecture et patrimoine", "domaine": "Arts, Design & Culture", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": ["C", "D", "E", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "3 à 5 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "ubuea",
+      "nom": "University of Buea",
+      "sigle": "UB",
+      "categorie": "universite_publique",
+      "statut": "public",
+      "ville": "Buea",
+      "region": "Sud-Ouest",
+      "tutelle": "MINESUP",
+      "description": "Université d'État de tradition anglo-saxonne (enseignement en anglais). Faculties of Science, Arts, Social and Management Sciences, Education, Health Sciences, Engineering and Technology ; College of Technology ; ASTI (traduction et interprétation).",
+      "admission": "Dossier pour la plupart des programmes ; concours pour Health Sciences, Engineering, ASTI.",
+      "frais_indicatifs": "50 000 FCFA de droits universitaires par an (programmes classiques).",
+      "filieres": [
+        { "nom": "Computer Science, Mathematics, Physics, Chemistry, Biology", "domaine": "Sciences fondamentales", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": ["GCE_SCI", "C", "D", "E", "TI"], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Medicine, Nursing, Medical Laboratory Science (Faculty of Health Sciences)", "domaine": "Santé & Médecine", "diplomes": ["Licence", "Doctorat en médecine"], "niveau": "BAC", "series": ["GCE_SCI", "C", "D"], "admission": "concours", "duree": "3 à 7 ans" },
+        { "nom": "Engineering (computer, electrical, civil) – FET / College of Technology", "domaine": "Ingénierie & BTP", "diplomes": ["Licence", "Ingénieur"], "niveau": "BAC", "series": ["GCE_SCI", "C", "E"], "admission": "concours", "duree": "3 à 5 ans" },
+        { "nom": "Économie, gestion, banque, sciences sociales (SMS)", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Journalism and Mass Communication, Law, Languages", "domaine": "Journalisme & Communication", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Traduction et interprétation (ASTI)", "domaine": "Lettres, Langues & Sciences humaines", "diplomes": ["Master"], "niveau": "LICENCE", "series": [], "admission": "concours", "duree": "2 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "ubamenda",
+      "nom": "The University of Bamenda",
+      "sigle": "UBa",
+      "categorie": "universite_publique",
+      "statut": "public",
+      "ville": "Bambili (Bamenda)",
+      "region": "Nord-Ouest",
+      "tutelle": "MINESUP",
+      "description": "Université d'État anglophone. Écoles : HTTC et HTTTC de Bambili (formation des enseignants), National Higher Polytechnic Institute (NAHPI), College of Technology, Faculty of Health Sciences.",
+      "admission": "Dossier (facultés) ; concours (HTTC, HTTTC, NAHPI, santé).",
+      "frais_indicatifs": "50 000 FCFA de droits universitaires par an (programmes classiques).",
+      "filieres": [
+        { "nom": "Teacher training – HTTC / HTTTC (enseignement général et technique)", "domaine": "Éducation & Enseignement", "diplomes": ["DIPES I", "DIPET I"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Engineering – NAHPI (civil, électrique, informatique, mines)", "domaine": "Ingénierie & BTP", "diplomes": ["Licence", "Ingénieur"], "niveau": "BAC", "series": ["GCE_SCI", "C", "E", "TECH_IND"], "admission": "concours", "duree": "3 à 5 ans" },
+        { "nom": "Health sciences (nursing, medicine, laboratory)", "domaine": "Santé & Médecine", "diplomes": ["Licence", "Doctorat en médecine"], "niveau": "BAC", "series": ["GCE_SCI", "C", "D"], "admission": "concours", "duree": "3 à 7 ans" },
+        { "nom": "Economics, management, law, arts", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "ungaoundere",
+      "nom": "Université de Ngaoundéré",
+      "sigle": "UN",
+      "categorie": "universite_publique",
+      "statut": "public",
+      "ville": "Ngaoundéré",
+      "region": "Adamaoua",
+      "tutelle": "MINESUP",
+      "description": "Université d'État. Écoles rattachées : ENSAI (agro-industrie), IUT de Ngaoundéré, École de Géologie et d'Exploitation Minière (Meiganga), École des Sciences et de Médecine Vétérinaire.",
+      "admission": "Facultés : dossier. Écoles : concours.",
+      "frais_indicatifs": "50 000 FCFA de droits universitaires par an en faculté.",
+      "filieres": [
+        { "nom": "Sciences agro-industrielles – ENSAI (génie alimentaire, chimie industrielle, génie des procédés)", "domaine": "Agronomie & Environnement", "diplomes": ["Ingénieur", "Licence"], "niveau": "BAC", "series": ["C", "D", "E", "GCE_SCI"], "admission": "concours", "duree": "3 à 5 ans" },
+        { "nom": "Médecine vétérinaire (ESMV)", "domaine": "Santé & Médecine", "diplomes": ["Doctorat vétérinaire"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "6 ans" },
+        { "nom": "Géologie et exploitation minière (EGEM, Meiganga)", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur", "Licence"], "niveau": "BAC", "series": ["C", "D", "E", "GCE_SCI"], "admission": "concours", "duree": "3 à 5 ans" },
+        { "nom": "IUT : génie informatique, génie électrique, maintenance industrielle, gestion", "domaine": "Informatique & Télécoms", "diplomes": ["DUT", "Licence"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "TECH_IND", "TECH_TERT", "GCE_SCI"], "admission": "concours", "duree": "2 à 3 ans" },
+        { "nom": "Sciences, lettres, droit, économie (facultés)", "domaine": "Sciences fondamentales", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "umaroua",
+      "nom": "Université de Maroua",
+      "sigle": "UMa",
+      "categorie": "universite_publique",
+      "statut": "public",
+      "ville": "Maroua",
+      "region": "Extrême-Nord",
+      "tutelle": "MINESUP",
+      "description": "Université d'État. Écoles rattachées : École Normale Supérieure de Maroua, École Nationale Supérieure Polytechnique de Maroua (ex-Institut Supérieur du Sahel).",
+      "admission": "Facultés : dossier. ENS et Polytechnique : concours.",
+      "frais_indicatifs": "50 000 FCFA de droits universitaires par an en faculté.",
+      "filieres": [
+        { "nom": "Formation des enseignants (ENS Maroua)", "domaine": "Éducation & Enseignement", "diplomes": ["DIPES I", "DIPES II"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Ingénierie – ENSPM (génie civil, informatique, énergies renouvelables, agriculture, textile, environnement)", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur", "Licence"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "3 à 5 ans" },
+        { "nom": "Lettres, droit, économie (facultés)", "domaine": "Lettres, Langues & Sciences humaines", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "nouvelles-universites",
+      "nom": "Universités de Bertoua, d'Ebolowa et de Garoua",
+      "sigle": "UBe / UEb / UGa",
+      "categorie": "universite_publique",
+      "statut": "public",
+      "ville": "Bertoua, Ebolowa, Garoua",
+      "region": "Est, Sud, Nord",
+      "tutelle": "MINESUP",
+      "description": "Trois universités d'État créées en 2022. Leurs offres de formation se mettent progressivement en place (facultés et écoles, dont des écoles d'ingénieurs et des écoles normales). Idéal pour étudier près de chez soi dans ces régions.",
+      "admission": "Dossier pour les facultés, concours pour les écoles.",
+      "frais_indicatifs": "50 000 FCFA de droits universitaires par an en faculté.",
+      "filieres": [
+        { "nom": "Facultés de sciences, lettres, droit et économie (selon l'université)", "domaine": "Sciences fondamentales", "diplomes": ["Licence"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Écoles d'ingénieurs / mines / agronomie (en cours d'ouverture, à vérifier)", "domaine": "Ingénierie & BTP", "diplomes": ["Licence", "Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "GCE_SCI"], "admission": "concours", "duree": "3 à 5 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "ucac",
+      "nom": "Université Catholique d'Afrique Centrale",
+      "sigle": "UCAC",
+      "categorie": "ipes",
+      "statut": "confessionnel",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Institution catholique régionale (reconnue par l'État)",
+      "description": "Université catholique réputée pour la rigueur de sa formation. Facultés de sciences sociales et de gestion, de philosophie, de théologie, de droit canonique ; école des sciences de la santé. Partenaire de l'UCAC-ICAM pour l'ingénierie.",
+      "admission": "Étude de dossier et test/entretien.",
+      "frais_indicatifs": "Environ 500 000 à 1 500 000 FCFA par an selon la filière (à vérifier).",
+      "site": "https://www.ucac-icy.net",
+      "filieres": [
+        { "nom": "Économie, gestion, comptabilité, finance (FSSG)", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "test", "duree": "3 + 2 ans" },
+        { "nom": "Sciences sociales, droit", "domaine": "Droit & Sciences politiques", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "test", "duree": "3 + 2 ans" },
+        { "nom": "Sciences infirmières (École des sciences de la santé)", "domaine": "Santé & Médecine", "diplomes": ["Licence"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "test", "duree": "3 ans" },
+        { "nom": "Philosophie, théologie", "domaine": "Théologie & Philosophie", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "ucac-icam",
+      "nom": "UCAC-ICAM (Institut Catholique d'Arts et Métiers)",
+      "sigle": "UCAC-ICAM",
+      "categorie": "ipes",
+      "statut": "confessionnel",
+      "ville": "Douala",
+      "region": "Littoral",
+      "tutelle": "UCAC / réseau ICAM",
+      "description": "École d'ingénieurs généralistes en génie industriel, en partenariat avec le réseau ICAM. Formation en alternance école/entreprise, très appréciée des industriels.",
+      "admission": "Concours / sélection sur dossier et entretien après le Bac.",
+      "frais_indicatifs": "Élevés (plus de 1 000 000 FCFA par an, à vérifier) ; possibilités d'alternance rémunérée.",
+      "filieres": [
+        { "nom": "Ingénieur généraliste – génie industriel (mécanique, électrique, maintenance)", "domaine": "Ingénierie & BTP", "diplomes": ["Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "GCE_SCI"], "admission": "concours", "duree": "5 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "iuc-douala",
+      "nom": "Institut Universitaire de la Côte",
+      "sigle": "IUC",
+      "categorie": "ipes",
+      "statut": "privé",
+      "ville": "Douala",
+      "region": "Littoral",
+      "tutelle": "IPES agréé MINESUP (tutelle académique d'une université d'État)",
+      "description": "Grand IPES de Douala proposant BTS/HND, licences, masters et cycles d'ingénieurs dans les technologies, le commerce et la gestion.",
+      "admission": "Étude de dossier (et test pour certains cycles).",
+      "frais_indicatifs": "Environ 400 000 à 900 000 FCFA par an selon le cycle (à vérifier).",
+      "site": "https://www.myiuc.com",
+      "filieres": [
+        { "nom": "Génie informatique, génie logiciel, réseaux et télécoms", "domaine": "Informatique & Télécoms", "diplomes": ["BTS", "HND", "Licence", "Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "TECH_IND", "GCE_SCI"], "admission": "dossier", "duree": "2 à 5 ans" },
+        { "nom": "Génie civil, génie électrique, maintenance industrielle", "domaine": "Ingénierie & BTP", "diplomes": ["BTS", "HND", "Licence", "Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "TECH_IND", "GCE_SCI"], "admission": "dossier", "duree": "2 à 5 ans" },
+        { "nom": "Comptabilité, banque, marketing, logistique, gestion des ressources humaines", "domaine": "Commerce, Gestion & Finance", "diplomes": ["BTS", "HND", "Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 à 5 ans" },
+        { "nom": "Entrée en licence professionnelle après BTS/HND/DUT", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence"], "niveau": "BAC2", "series": [], "admission": "dossier", "duree": "1 an" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "udm-bangangte",
+      "nom": "Université des Montagnes",
+      "sigle": "UdM",
+      "categorie": "ipes",
+      "statut": "privé",
+      "ville": "Bangangté",
+      "region": "Ouest",
+      "tutelle": "Association pour l'Éducation et le Développement (AED) – agréé MINESUP",
+      "description": "Université privée à but non lucratif, référence pour les études de santé dans le privé (médecine, pharmacie, odontologie, médecine vétérinaire) ; également sciences et technologies.",
+      "admission": "Concours / test d'entrée propre à l'université.",
+      "frais_indicatifs": "Élevés pour la santé (souvent plus de 1 000 000 FCFA par an, à vérifier).",
+      "site": "https://www.udesmontagnes.org",
+      "filieres": [
+        { "nom": "Médecine humaine", "domaine": "Santé & Médecine", "diplomes": ["Doctorat en médecine"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "7 ans" },
+        { "nom": "Pharmacie, odontostomatologie", "domaine": "Santé & Médecine", "diplomes": ["Doctorat"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "6 ans" },
+        { "nom": "Médecine vétérinaire", "domaine": "Santé & Médecine", "diplomes": ["Doctorat vétérinaire"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "6 ans" },
+        { "nom": "Sciences biomédicales, techniques de laboratoire, soins infirmiers", "domaine": "Santé & Médecine", "diplomes": ["Licence"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Sciences et technologies (informatique, génie civil, génie électrique)", "domaine": "Informatique & Télécoms", "diplomes": ["Licence", "Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "GCE_SCI"], "admission": "concours", "duree": "3 à 5 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "ict-university",
+      "nom": "The ICT University",
+      "sigle": "ICTU",
+      "categorie": "ipes",
+      "statut": "privé",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "IPES agréé MINESUP",
+      "description": "Université privée anglophone/bilingue spécialisée dans les technologies de l'information et le management, avec des partenariats internationaux.",
+      "admission": "Étude de dossier.",
+      "frais_indicatifs": "À vérifier auprès de l'établissement.",
+      "filieres": [
+        { "nom": "Computer Science, Software Engineering, Networks and Security", "domaine": "Informatique & Télécoms", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "GCE_SCI", "GCE_COM"], "admission": "dossier", "duree": "3 à 4 ans" },
+        { "nom": "Business administration, management of information systems", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 à 4 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "iai-cameroun",
+      "nom": "Institut Africain d'Informatique – Représentation du Cameroun",
+      "sigle": "IAI-Cameroun",
+      "categorie": "ipes",
+      "statut": "privé",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Institut Africain d'Informatique (organisation inter-États)",
+      "description": "École spécialisée en informatique : programmation, systèmes et réseaux, génie logiciel. Diplômes reconnus dans plusieurs pays africains.",
+      "admission": "Concours / test d'entrée.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Génie logiciel, systèmes et réseaux", "domaine": "Informatique & Télécoms", "diplomes": ["Licence", "Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "TECH_IND", "GCE_SCI"], "admission": "concours", "duree": "3 à 5 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "siantou",
+      "nom": "Institut Supérieur Siantou",
+      "sigle": "Siantou",
+      "categorie": "ipes",
+      "statut": "privé",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "IPES agréé MINESUP",
+      "description": "IPES de Yaoundé proposant des BTS et licences professionnelles en gestion, commerce, communication, informatique et santé.",
+      "admission": "Étude de dossier.",
+      "frais_indicatifs": "Environ 300 000 à 600 000 FCFA par an (à vérifier).",
+      "filieres": [
+        { "nom": "Comptabilité et gestion, banque, marketing", "domaine": "Commerce, Gestion & Finance", "diplomes": ["BTS", "Licence"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 à 3 ans" },
+        { "nom": "Journalisme, communication d'entreprise", "domaine": "Journalisme & Communication", "diplomes": ["BTS", "Licence"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 à 3 ans" },
+        { "nom": "Informatique de gestion, réseaux", "domaine": "Informatique & Télécoms", "diplomes": ["BTS", "Licence"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 à 3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "institut-samba",
+      "nom": "Institut Samba Supérieur",
+      "sigle": "ISS",
+      "categorie": "ipes",
+      "statut": "privé",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "IPES agréé MINESUP",
+      "description": "IPES orienté gestion, banque, assurance, logistique et informatique (BTS, HND, licences, masters).",
+      "admission": "Étude de dossier.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Banque, finance, assurance, comptabilité", "domaine": "Commerce, Gestion & Finance", "diplomes": ["BTS", "HND", "Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 à 5 ans" },
+        { "nom": "Logistique et transport, commerce international", "domaine": "Commerce, Gestion & Finance", "diplomes": ["BTS", "Licence"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 à 3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "upac",
+      "nom": "Université Protestante d'Afrique Centrale",
+      "sigle": "UPAC",
+      "categorie": "ipes",
+      "statut": "confessionnel",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "Églises protestantes – reconnue par l'État",
+      "description": "Université protestante : faculté de théologie, faculté des sciences sociales et relations internationales, informatique et gestion.",
+      "admission": "Étude de dossier et entretien.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Théologie", "domaine": "Théologie & Philosophie", "diplomes": ["Licence", "Master", "Doctorat"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Sciences sociales, relations internationales, gestion", "domaine": "Administration & Relations internationales", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "saint-jerome",
+      "nom": "Saint Jérôme Catholic University of Douala",
+      "sigle": "Saint Jérôme",
+      "categorie": "ipes",
+      "statut": "confessionnel",
+      "ville": "Douala",
+      "region": "Littoral",
+      "tutelle": "Archidiocèse de Douala – agréé MINESUP",
+      "description": "Université catholique bilingue : ingénierie, informatique, gestion et sciences de la santé.",
+      "admission": "Étude de dossier et test.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Ingénierie (génie civil, génie électrique, informatique)", "domaine": "Ingénierie & BTP", "diplomes": ["Licence", "Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "GCE_SCI"], "admission": "test", "duree": "3 à 5 ans" },
+        { "nom": "Sciences de gestion, comptabilité, finance", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "test", "duree": "3 ans" },
+        { "nom": "Sciences infirmières, sciences de la santé", "domaine": "Santé & Médecine", "diplomes": ["Licence"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "test", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "pkfokam",
+      "nom": "Pkfokam Institute of Excellence",
+      "sigle": "PIE",
+      "categorie": "ipes",
+      "statut": "privé",
+      "ville": "Yaoundé",
+      "region": "Centre",
+      "tutelle": "IPES agréé MINESUP",
+      "description": "Institut privé bilingue axé sur l'ingénierie, l'informatique et le management, avec une forte orientation entrepreneuriale.",
+      "admission": "Étude de dossier et test.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Génie logiciel, génie électrique, génie civil", "domaine": "Ingénierie & BTP", "diplomes": ["Licence", "Ingénieur"], "niveau": "BAC", "series": ["C", "D", "E", "TI", "GCE_SCI"], "admission": "test", "duree": "3 à 5 ans" },
+        { "nom": "Management, entrepreneuriat", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence", "Master"], "niveau": "BAC", "series": [], "admission": "test", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "cuib-buea",
+      "nom": "Catholic University Institute of Buea",
+      "sigle": "CUIB",
+      "categorie": "ipes",
+      "statut": "confessionnel",
+      "ville": "Buea",
+      "region": "Sud-Ouest",
+      "tutelle": "Diocèse de Buea – agréé MINESUP",
+      "description": "Institut universitaire catholique anglophone, orienté entrepreneuriat, business, ingénierie et santé.",
+      "admission": "Étude de dossier.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Business, accounting, marketing, entrepreneurship", "domaine": "Commerce, Gestion & Finance", "diplomes": ["HND", "Licence", "Master"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 à 4 ans" },
+        { "nom": "Engineering and computer science", "domaine": "Informatique & Télécoms", "diplomes": ["HND", "Licence"], "niveau": "BAC", "series": ["GCE_SCI", "C", "D", "E", "TI"], "admission": "dossier", "duree": "2 à 4 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "hims-buea",
+      "nom": "Higher Institute of Management Studies",
+      "sigle": "HIMS Buea",
+      "categorie": "ipes",
+      "statut": "privé",
+      "ville": "Buea",
+      "region": "Sud-Ouest",
+      "tutelle": "IPES agréé MINESUP",
+      "description": "IPES anglophone préparant au HND et aux licences en management, comptabilité, informatique et santé.",
+      "admission": "Étude de dossier.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Accounting, banking, marketing, human resource management", "domaine": "Commerce, Gestion & Finance", "diplomes": ["HND", "Licence"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 à 3 ans" },
+        { "nom": "Software engineering, networking", "domaine": "Informatique & Télécoms", "diplomes": ["HND", "Licence"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 à 3 ans" },
+        { "nom": "Nursing, medical laboratory technology", "domaine": "Santé & Médecine", "diplomes": ["HND", "Licence"], "niveau": "BAC", "series": ["GCE_SCI", "C", "D"], "admission": "dossier", "duree": "2 à 3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "cosendai",
+      "nom": "Université Adventiste Cosendai",
+      "sigle": "UAC",
+      "categorie": "ipes",
+      "statut": "confessionnel",
+      "ville": "Nanga-Eboko",
+      "region": "Centre",
+      "tutelle": "Église adventiste – agréé MINESUP",
+      "description": "Université adventiste en milieu rural : théologie, gestion, informatique, éducation, santé.",
+      "admission": "Étude de dossier.",
+      "frais_indicatifs": "À vérifier.",
+      "filieres": [
+        { "nom": "Gestion, comptabilité, informatique de gestion", "domaine": "Commerce, Gestion & Finance", "diplomes": ["Licence"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" },
+        { "nom": "Théologie, sciences de l'éducation", "domaine": "Théologie & Philosophie", "diplomes": ["Licence"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "3 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "ipes-bts-general",
+      "nom": "Réseau des IPES préparant au BTS / HND",
+      "sigle": "IPES (BTS/HND)",
+      "categorie": "ipes",
+      "statut": "privé",
+      "ville": "Toutes les grandes villes",
+      "region": "Toutes",
+      "tutelle": "MINESUP (liste officielle des IPES agréés publiée chaque année)",
+      "description": "Plusieurs centaines d'IPES agréés préparent au BTS (francophone) et au HND (anglophone) en 2 ans, dans plus de 100 spécialités : comptabilité, banque, marketing, secrétariat bureautique, logistique, informatique de gestion, génie logiciel, réseaux, maintenance, électrotechnique, génie civil, hôtellerie, tourisme, santé (techniques de laboratoire, sciences infirmières), agriculture, etc. Le BTS est accessible à toutes les séries selon la spécialité ; c'est une bonne option quand on n'a pas réussi les concours.",
+      "admission": "Inscription sur dossier avec le Bac ou le GCE A Level. Examen national en fin de 2e année.",
+      "frais_indicatifs": "Environ 250 000 à 700 000 FCFA par an selon l'IPES et la ville.",
+      "filieres": [
+        { "nom": "BTS/HND tertiaires : comptabilité, banque, marketing, commerce international, logistique, assistanat de direction", "domaine": "Commerce, Gestion & Finance", "diplomes": ["BTS", "HND"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 ans" },
+        { "nom": "BTS/HND informatiques : génie logiciel, réseaux et télécoms, informatique de gestion", "domaine": "Informatique & Télécoms", "diplomes": ["BTS", "HND"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 ans" },
+        { "nom": "BTS/HND industriels : électrotechnique, maintenance, génie civil, froid et climatisation", "domaine": "Ingénierie & BTP", "diplomes": ["BTS", "HND"], "niveau": "BAC", "series": ["C", "D", "E", "TECH_IND", "GCE_SCI", "GCE_COM"], "admission": "dossier", "duree": "2 ans" },
+        { "nom": "BTS/HND santé : techniques de laboratoire, sciences infirmières, kinésithérapie, pharmacie", "domaine": "Santé & Médecine", "diplomes": ["BTS", "HND"], "niveau": "BAC", "series": ["C", "D", "GCE_SCI"], "admission": "dossier", "duree": "2 ans" },
+        { "nom": "BTS/HND hôtellerie, restauration, tourisme", "domaine": "Hôtellerie, Tourisme & Restauration", "diplomes": ["BTS", "HND"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 ans" },
+        { "nom": "BTS/HND agriculture, élevage, agro-alimentaire", "domaine": "Agronomie & Environnement", "diplomes": ["BTS", "HND"], "niveau": "BAC", "series": [], "admission": "dossier", "duree": "2 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "enieg-eniet",
+      "nom": "Écoles Normales d'Instituteurs (ENIEG / ENIET)",
+      "sigle": "ENIEG / ENIET",
+      "categorie": "formation_professionnelle",
+      "statut": "public",
+      "ville": "Dans chaque région",
+      "region": "Toutes",
+      "tutelle": "MINESEC",
+      "description": "Forment les instituteurs de l'enseignement maternel et primaire (ENIEG : enseignement général ; ENIET : enseignement technique). Accessibles dès le BEPC, le Probatoire ou le Bac, avec une durée de formation qui diminue quand le niveau d'entrée augmente.",
+      "admission": "Concours national lancé par le MINESEC.",
+      "frais_indicatifs": "Formation publique ; frais de concours modestes (à vérifier).",
+      "filieres": [
+        { "nom": "Instituteur (maternelle et primaire) – entrée avec le BEPC/CAP", "domaine": "Éducation & Enseignement", "diplomes": ["CAPIEMP"], "niveau": "BEPC", "series": [], "admission": "concours", "duree": "3 ans" },
+        { "nom": "Instituteur – entrée avec le Probatoire", "domaine": "Éducation & Enseignement", "diplomes": ["CAPIEMP"], "niveau": "PROBATOIRE", "series": [], "admission": "concours", "duree": "2 ans" },
+        { "nom": "Instituteur – entrée avec le Bac", "domaine": "Éducation & Enseignement", "diplomes": ["CAPIEMP"], "niveau": "BAC", "series": [], "admission": "concours", "duree": "1 an" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "cfpe-minefop",
+      "nom": "Centres de Formation Professionnelle d'Excellence (Douala, Limbé, Sangmélima)",
+      "sigle": "CFPE",
+      "categorie": "formation_professionnelle",
+      "statut": "public",
+      "ville": "Douala, Limbé, Sangmélima",
+      "region": "Littoral, Sud-Ouest, Sud",
+      "tutelle": "MINEFOP",
+      "description": "Centres publics modernes de formation aux métiers techniques et industriels, avec ateliers équipés et formation pratique intensive.",
+      "admission": "Sélection (test et entretien) annoncée par le MINEFOP.",
+      "frais_indicatifs": "Subventionnés ; à vérifier auprès du centre.",
+      "filieres": [
+        { "nom": "Électricité, électrotechnique, automatisme", "domaine": "Métiers techniques & Artisanat", "diplomes": ["DQP", "CQP"], "niveau": "BEPC", "series": [], "admission": "test", "duree": "6 à 24 mois" },
+        { "nom": "Mécanique automobile, soudure, chaudronnerie", "domaine": "Métiers techniques & Artisanat", "diplomes": ["DQP", "CQP"], "niveau": "BEPC", "series": [], "admission": "test", "duree": "6 à 24 mois" },
+        { "nom": "Froid et climatisation, plomberie", "domaine": "Métiers techniques & Artisanat", "diplomes": ["DQP", "CQP"], "niveau": "BEPC", "series": [], "admission": "test", "duree": "6 à 24 mois" },
+        { "nom": "Maintenance informatique et réseaux", "domaine": "Informatique & Télécoms", "diplomes": ["DQP"], "niveau": "BEPC", "series": [], "admission": "test", "duree": "9 à 24 mois" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "sar-sm",
+      "nom": "Sections Artisanales Rurales et Sections Ménagères",
+      "sigle": "SAR/SM",
+      "categorie": "formation_professionnelle",
+      "statut": "public",
+      "ville": "Réseau national (communes urbaines et rurales)",
+      "region": "Toutes",
+      "tutelle": "MINEFOP",
+      "description": "Réseau public de proximité pour apprendre un métier sans avoir besoin du Bac : menuiserie, maçonnerie, couture, électricité, agriculture, économie familiale. Idéal pour les jeunes sortis tôt du système scolaire.",
+      "admission": "Inscription directe (niveau CEP ou sans diplôme selon la section).",
+      "frais_indicatifs": "Faibles (à vérifier localement).",
+      "filieres": [
+        { "nom": "Menuiserie, maçonnerie, électricité bâtiment", "domaine": "Métiers techniques & Artisanat", "diplomes": ["CQP"], "niveau": "AUCUN", "series": [], "admission": "libre", "duree": "1 à 2 ans" },
+        { "nom": "Couture, industrie de l'habillement, économie sociale et familiale", "domaine": "Métiers techniques & Artisanat", "diplomes": ["CQP"], "niveau": "AUCUN", "series": [], "admission": "libre", "duree": "1 à 2 ans" },
+        { "nom": "Agriculture, élevage", "domaine": "Agronomie & Environnement", "diplomes": ["CQP"], "niveau": "AUCUN", "series": [], "admission": "libre", "duree": "1 à 2 ans" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "cfp-agrees",
+      "nom": "Centres de Formation Professionnelle privés agréés (CQP / DQP)",
+      "sigle": "CFP agréés",
+      "categorie": "formation_professionnelle",
+      "statut": "privé",
+      "ville": "Toutes les villes",
+      "region": "Toutes",
+      "tutelle": "MINEFOP (liste des centres agréés disponible auprès des délégations régionales)",
+      "description": "Des centaines de centres privés agréés par le MINEFOP préparent au CQP et au DQP : coiffure et esthétique, couture, pâtisserie et cuisine, secrétariat bureautique, infographie, maintenance informatique, électricité, mécanique, conduite d'engins, aide-soignant, hôtellerie, etc. Vérifie toujours l'agrément MINEFOP du centre.",
+      "admission": "Inscription sur dossier ; niveau CEP pour le CQP, niveau BEPC pour le DQP (en général).",
+      "frais_indicatifs": "Environ 100 000 à 500 000 FCFA selon le métier et la durée.",
+      "filieres": [
+        { "nom": "Coiffure, esthétique, couture, stylisme", "domaine": "Métiers techniques & Artisanat", "diplomes": ["CQP", "DQP"], "niveau": "CEP", "series": [], "admission": "dossier", "duree": "6 à 18 mois" },
+        { "nom": "Cuisine, pâtisserie, hôtellerie", "domaine": "Hôtellerie, Tourisme & Restauration", "diplomes": ["CQP", "DQP"], "niveau": "CEP", "series": [], "admission": "dossier", "duree": "6 à 18 mois" },
+        { "nom": "Secrétariat bureautique, comptabilité informatisée", "domaine": "Commerce, Gestion & Finance", "diplomes": ["DQP"], "niveau": "BEPC", "series": [], "admission": "dossier", "duree": "9 à 18 mois" },
+        { "nom": "Infographie, maintenance informatique, développement web", "domaine": "Informatique & Télécoms", "diplomes": ["DQP"], "niveau": "BEPC", "series": [], "admission": "dossier", "duree": "9 à 18 mois" },
+        { "nom": "Électricité bâtiment, mécanique auto, conduite d'engins", "domaine": "Métiers techniques & Artisanat", "diplomes": ["CQP", "DQP"], "niveau": "CEP", "series": [], "admission": "dossier", "duree": "6 à 18 mois" },
+        { "nom": "Aide-soignant, auxiliaire de pharmacie", "domaine": "Santé & Médecine", "diplomes": ["DQP"], "niveau": "BEPC", "series": [], "admission": "dossier", "duree": "9 à 18 mois" }
+      ],
+      "verifie": false
+    },
+    {
+      "id": "lycees-techniques",
+      "nom": "Lycées techniques et CETIC",
+      "sigle": "Lycées techniques / CETIC",
+      "categorie": "formation_professionnelle",
+      "statut": "public",
+      "ville": "Toutes les villes",
+      "region": "Toutes",
+      "tutelle": "MINESEC",
+      "description": "Enseignement secondaire technique : le CETIC prépare au CAP (après le CEP), le lycée technique prépare au Probatoire et au Bac technique (industriel ou tertiaire), qui ouvrent ensuite aux IUT, BTS et écoles d'ingénieurs.",
+      "admission": "Concours d'entrée en 1re année / admission après le CAP ou le BEPC.",
+      "frais_indicatifs": "Frais exigibles de l'enseignement secondaire public (modestes).",
+      "filieres": [
+        { "nom": "CAP industriels et tertiaires (électricité, maçonnerie, mécanique, comptabilité, secrétariat)", "domaine": "Métiers techniques & Artisanat", "diplomes": ["CAP"], "niveau": "CEP", "series": [], "admission": "concours", "duree": "4 ans" },
+        { "nom": "Second cycle technique : Bac F (industriel) ou G (tertiaire)", "domaine": "Métiers techniques & Artisanat", "diplomes": ["Probatoire", "Bac technique"], "niveau": "BEPC", "series": [], "admission": "dossier", "duree": "3 ans" }
+      ],
+      "verifie": false
+    }
+  ]
+}

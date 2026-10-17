@@ -1,0 +1,160 @@
+:root {
+  --vert: #0b7a4b;
+  --vert-fonce: #075c38;
+  --rouge: #c8102e;
+  --jaune: #f6c443;
+  --fond: #f5f7f6;
+  --surface: #ffffff;
+  --texte: #1b2420;
+  --doux: #5d6b65;
+  --bord: #dde4e0;
+  --bulle-user: #0b7a4b;
+  --bulle-user-texte: #ffffff;
+  --rayon: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #101614;
+    --surface: #18211e;
+    --texte: #e6ece9;
+    --doux: #9fb0a8;
+    --bord: #2a3632;
+    --bulle-user: #13935c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fond);
+  color: var(--texte);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.entete {
+  background: var(--vert);
+  color: #fff;
+  padding: 12px 16px 0;
+  border-bottom: 4px solid var(--jaune);
+}
+.marque { display: flex; align-items: center; gap: 12px; max-width: 960px; margin: 0 auto; }
+.logo {
+  width: 42px; height: 42px; border-radius: 12px;
+  background: var(--jaune); color: var(--vert-fonce);
+  display: grid; place-items: center; font-weight: 800; font-size: 24px;
+}
+.marque h1 { margin: 0; font-size: 1.4rem; letter-spacing: .5px; }
+.marque p { margin: 0; font-size: .85rem; opacity: .9; }
+
+.onglets { display: flex; gap: 4px; max-width: 960px; margin: 12px auto 0; }
+.onglet {
+  flex: 1; border: 0; padding: 10px; font-size: 1rem; cursor: pointer;
+  background: transparent; color: #fff; opacity: .75; border-radius: 10px 10px 0 0;
+}
+.onglet.actif { background: var(--fond); color: var(--vert); opacity: 1; font-weight: 600; }
+
+.profil {
+  max-width: 960px; width: calc(100% - 32px); margin: 12px auto 0;
+  background: var(--surface); border: 1px solid var(--bord); border-radius: var(--rayon);
+  padding: 10px 14px;
+}
+.profil summary { cursor: pointer; font-weight: 600; }
+.resume { font-weight: 400; color: var(--doux); font-size: .85rem; margin-left: 6px; }
+.grille-profil {
+  display: grid; gap: 10px; margin-top: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+.grille-profil label { display: flex; flex-direction: column; font-size: .8rem; color: var(--doux); gap: 4px; }
+
+select, input, textarea {
+  font: inherit; color: var(--texte); background: var(--fond);
+  border: 1px solid var(--bord); border-radius: 10px; padding: 8px 10px; width: 100%;
+}
+select:focus, input:focus, textarea:focus { outline: 2px solid var(--vert); outline-offset: 0; }
+
+main { flex: 1; max-width: 960px; width: 100%; margin: 0 auto; padding: 12px 16px; }
+.vue { display: none; }
+.vue.active { display: block; }
+
+.messages { display: flex; flex-direction: column; gap: 12px; padding-bottom: 8px; }
+.bulle {
+  padding: 10px 14px; border-radius: var(--rayon); max-width: 88%;
+  background: var(--surface); border: 1px solid var(--bord); overflow-wrap: anywhere;
+}
+.bulle.user { align-self: flex-end; background: var(--bulle-user); color: var(--bulle-user-texte); border-color: transparent; }
+.bulle.assistant { align-self: flex-start; }
+.bulle p { margin: 6px 0; }
+.bulle h3, .bulle h4 { margin: 12px 0 4px; font-size: 1rem; color: var(--vert); }
+.bulle ul, .bulle ol { margin: 6px 0; padding-left: 20px; }
+.bulle a { color: var(--vert); }
+.bulle.erreur { border-color: var(--rouge); color: var(--rouge); }
+.curseur::after { content: "▍"; animation: clignote 1s steps(2) infinite; color: var(--vert); }
+@keyframes clignote { 50% { opacity: 0; } }
+
+.suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
+.suggestions button {
+  border: 1px solid var(--vert); color: var(--vert); background: var(--surface);
+  border-radius: 999px; padding: 6px 12px; font-size: .85rem; cursor: pointer; text-align: left;
+}
+.suggestions button:hover { background: var(--vert); color: #fff; }
+
+.saisie {
+  position: sticky; bottom: 0; display: flex; gap: 8px; align-items: flex-end;
+  background: var(--fond); padding: 8px 0;
+}
+.saisie textarea { resize: none; max-height: 160px; border-radius: 22px; padding: 10px 16px; }
+.saisie button {
+  flex: none; width: 46px; height: 46px; border-radius: 50%; border: 0;
+  background: var(--vert); color: #fff; font-size: 1.2rem; cursor: pointer;
+}
+.saisie button:disabled { opacity: .5; cursor: wait; }
+.mode { font-size: .75rem; color: var(--doux); text-align: center; margin: 0; }
+
+.barre-recherche { display: flex; gap: 8px; flex-wrap: wrap; }
+.barre-recherche input { flex: 2 1 240px; }
+.barre-recherche select { flex: 1 1 160px; width: auto; }
+.compteur { color: var(--doux); font-size: .85rem; }
+
+.cartes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.carte {
+  background: var(--surface); border: 1px solid var(--bord); border-radius: var(--rayon);
+  padding: 14px; cursor: pointer; text-align: left; font: inherit; color: inherit;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.carte:hover { border-color: var(--vert); }
+.carte h3 { margin: 0; font-size: 1rem; }
+.carte .sigle { color: var(--vert); font-weight: 700; }
+.carte .meta { font-size: .8rem; color: var(--doux); }
+.carte ul { margin: 0; padding-left: 18px; font-size: .88rem; }
+
+.badge {
+  display: inline-block; font-size: .7rem; padding: 2px 8px; border-radius: 999px;
+  background: var(--fond); border: 1px solid var(--bord); margin-right: 4px;
+}
+.badge.concours { border-color: var(--rouge); color: var(--rouge); }
+
+dialog {
+  border: 0; border-radius: var(--rayon); padding: 20px; max-width: 640px; width: calc(100% - 32px);
+  background: var(--surface); color: var(--texte);
+}
+dialog::backdrop { background: rgb(0 0 0 / .5); }
+dialog h2 { margin-top: 0; color: var(--vert); font-size: 1.2rem; }
+dialog table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+dialog td, dialog th { border-bottom: 1px solid var(--bord); padding: 6px 4px; text-align: left; vertical-align: top; }
+.fermer {
+  margin-top: 16px; border: 0; background: var(--vert); color: #fff;
+  padding: 8px 18px; border-radius: 10px; cursor: pointer;
+}
+.actions-fiche { margin-top: 12px; }
+.actions-fiche button {
+  border: 1px solid var(--vert); background: transparent; color: var(--vert);
+  padding: 6px 12px; border-radius: 10px; cursor: pointer;
+}
+
+.pied { text-align: center; font-size: .75rem; color: var(--doux); padding: 12px 16px 20px; max-width: 960px; margin: 0 auto; }

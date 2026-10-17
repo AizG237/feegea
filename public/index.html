@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Figea – Orientation au Cameroun</title>
+  <meta name="description" content="Figea t'aide à trouver l'école et la filière qui te correspondent au Cameroun : universités, grandes écoles, IPES et formations professionnelles.">
+  <meta name="theme-color" content="#0b7a4b">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="entete">
+    <div class="marque">
+      <span class="logo" aria-hidden="true">F</span>
+      <div>
+        <h1>Figea</h1>
+        <p>Trouve ton école et ta filière au Cameroun</p>
+      </div>
+    </div>
+    <nav class="onglets" role="tablist">
+      <button role="tab" class="onglet actif" data-vue="chat" aria-selected="true">💬 Conseiller</button>
+      <button role="tab" class="onglet" data-vue="explorer" aria-selected="false">🔎 Explorer</button>
+    </nav>
+  </header>
+
+  <details class="profil" id="profil" open>
+    <summary>Mon profil <span id="resume-profil" class="resume"></span></summary>
+    <form id="form-profil" class="grille-profil">
+      <label>Niveau
+        <select name="niveau" id="niveau"><option value="">— Choisir —</option></select>
+      </label>
+      <label id="champ-serie">Série / filière du Bac
+        <select name="serie" id="serie"><option value="">— Toutes —</option></select>
+      </label>
+      <label>Domaine qui m'intéresse
+        <select name="domaine" id="domaine"><option value="">— Tous —</option></select>
+      </label>
+      <label>Ville
+        <input name="ville" id="ville" list="villes" placeholder="Ex. Douala">
+        <datalist id="villes"></datalist>
+      </label>
+      <label>Type d'établissement
+        <select name="statut" id="statut">
+          <option value="">— Tous —</option>
+          <option value="public">Public</option>
+          <option value="privé">Privé</option>
+          <option value="confessionnel">Confessionnel</option>
+        </select>
+      </label>
+    </form>
+  </details>
+
+  <main>
+    <section id="vue-chat" class="vue active" aria-label="Conseiller d'orientation">
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="bulle assistant">
+          <p>Bonjour 👋 Je suis <strong>Figea</strong>, ton conseiller d'orientation.</p>
+          <p>Dis-moi ce que tu aimerais faire plus tard, ton niveau et ta série : je te propose des écoles publiques, des IPES et des formations professionnelles adaptées.</p>
+        </div>
+      </div>
+      <div id="suggestions" class="suggestions">
+        <button>J'ai un Bac C, je veux devenir ingénieur en informatique</button>
+        <button>Quelles écoles pour faire médecine avec un Bac D ?</button>
+        <button>J'ai le BEPC, quels métiers puis-je apprendre rapidement ?</button>
+        <button>Bac A : je veux devenir journaliste</button>
+        <button>J'ai raté les concours, quelles alternatives à Douala ?</button>
+      </div>
+      <form id="form-chat" class="saisie">
+        <textarea id="question" rows="1" placeholder="Pose ta question sur ton orientation…" maxlength="2000" required></textarea>
+        <button type="submit" id="envoyer" aria-label="Envoyer">➤</button>
+      </form>
+      <p id="mode" class="mode"></p>
+    </section>
+
+    <section id="vue-explorer" class="vue" aria-label="Explorer les écoles">
+      <div class="barre-recherche">
+        <input id="recherche" type="search" placeholder="Rechercher une filière, un métier, une école… (ex. génie civil)">
+        <select id="categorie"><option value="">Toutes catégories</option></select>
+      </div>
+      <p id="compteur" class="compteur"></p>
+      <div id="resultats" class="cartes"></div>
+    </section>
+  </main>
+
+  <dialog id="fiche">
+    <div id="fiche-contenu"></div>
+    <form method="dialog"><button class="fermer">Fermer</button></form>
+  </dialog>
+
+  <footer class="pied">
+    <p id="avertissement"></p>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
