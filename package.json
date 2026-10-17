@@ -1,7 +1,7 @@
 {
-  "name": "figea",
+  "name": "feegea",
   "version": "0.1.0",
-  "description": "Figea – conseiller d'orientation scolaire et universitaire pour le Cameroun (MVP)",
+  "description": "Feegea – conseiller d'orientation scolaire et universitaire pour le Cameroun (MVP)",
   "type": "module",
   "main": "src/server.js",
   "scripts": {

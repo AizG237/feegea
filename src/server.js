@@ -1,7 +1,7 @@
 import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { CATEGORIES, ecoles, rechercher, referentiel, avertissement } from "./kb.js";
+import { CATEGORIES, ecoles, rechercher, referentiel, avertissement, syntheseComparaison } from "./kb.js";
 import { iaActive, repondre } from "./chat.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -22,6 +22,20 @@ app.get("/api/ecoles", (req, res) => {
   res.json(resultats.map(({ ecole, filieres }) => ({ ...ecole, filieres })));
 });
 
+export const MAX_COMPARAISON = 4;
+
+app.get("/api/comparer", (req, res) => {
+  const ids = String(req.query.ids || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .slice(0, MAX_COMPARAISON);
+  const { niveau, serie } = req.query;
+  const choisies = ids.map((id) => ecoles.find((e) => e.id === id)).filter(Boolean);
+  if (choisies.length < 2) return res.status(400).json({ erreur: "Choisis au moins deux écoles à comparer." });
+  res.json(choisies.map((e) => syntheseComparaison(e, { niveau, serie })));
+});
+
 app.get("/api/ecoles/:id", (req, res) => {
   const ecole = ecoles.find((e) => e.id === req.params.id);
   if (!ecole) return res.status(404).json({ erreur: "École introuvable" });
@@ -29,7 +43,7 @@ app.get("/api/ecoles/:id", (req, res) => {
 });
 
 // Limitation simple du nombre de questions par IP pour maîtriser le coût de l'IA.
-const LIMITE_PAR_HEURE = Number(process.env.FIGEA_RATE_LIMIT || 30);
+const LIMITE_PAR_HEURE = Number(process.env.FEEGEA_RATE_LIMIT || 30);
 const compteurs = new Map();
 function limiter(req, res, next) {
   const maintenant = Date.now();
@@ -85,5 +99,5 @@ app.post("/api/chat", limiter, async (req, res) => {
 
 const PORT = Number(process.env.PORT || 3000);
 app.listen(PORT, () => {
-  console.log(`Figea démarré sur http://localhost:${PORT} (IA ${iaActive ? "activée" : "désactivée : mode hors-ligne"})`);
+  console.log(`Feegea démarré sur http://localhost:${PORT} (IA ${iaActive ? "activée" : "désactivée : mode hors-ligne"})`);
 });

@@ -1,5 +1,5 @@
 const $ = (s) => document.querySelector(s);
-const STOCKAGE = "figea-profil";
+const STOCKAGE = "feegea-profil";
 
 let referentiel = null;
 const conversation = [];
@@ -156,18 +156,133 @@ async function chercher() {
   const conteneur = $("#resultats");
   conteneur.replaceChildren();
   for (const e of ecoles) {
-    const carte = document.createElement("button");
+    const carte = document.createElement("article");
     carte.className = "carte";
+    carte.tabIndex = 0;
+    carte.dataset.id = e.id;
     const concours = e.filieres.some((f) => f.admission === "concours");
     carte.innerHTML = `
       <div><span class="badge">${echapper(referentiel.categories[e.categorie])}</span>${concours ? '<span class="badge concours">concours</span>' : ""}</div>
       <h3><span class="sigle">${echapper(e.sigle)}</span> · ${echapper(e.nom)}</h3>
       <div class="meta">📍 ${echapper(e.ville)} · ${echapper(e.statut)}</div>
       <ul>${e.filieres.slice(0, 4).map((f) => `<li>${echapper(f.nom)}</li>`).join("")}</ul>
-      ${e.filieres.length > 4 ? `<div class="meta">+ ${e.filieres.length - 4} autre(s) filière(s)</div>` : ""}`;
-    carte.addEventListener("click", () => ouvrirFiche(e.id));
+      <div class="bas">
+        <span class="meta">${e.filieres.length > 4 ? `+ ${e.filieres.length - 4} autre(s) filière(s)` : ""}</span>
+        <button class="bouton-comparer" type="button"></button>
+      </div>`;
+    carte.addEventListener("click", (ev) => {
+      if (ev.target.closest(".bouton-comparer")) basculerComparaison(e.id);
+      else ouvrirFiche(e.id);
+    });
+    carte.addEventListener("keydown", (ev) => { if (ev.key === "Enter" && ev.target === carte) ouvrirFiche(e.id); });
     conteneur.append(carte);
   }
+  majSelection();
+}
+
+// ---------- Comparaison ----------
+const MAX_COMPARAISON = 4;
+const STOCKAGE_COMPARAISON = "feegea-comparaison";
+let selection = [];
+let derniereComparaison = [];
+
+function sauverSelection() {
+  try { localStorage.setItem(STOCKAGE_COMPARAISON, JSON.stringify(selection)); } catch {}
+}
+
+function basculerComparaison(id) {
+  if (selection.includes(id)) selection = selection.filter((x) => x !== id);
+  else if (selection.length >= MAX_COMPARAISON) {
+    alert(`Tu peux comparer ${MAX_COMPARAISON} écoles au maximum. Retire-en une d'abord.`);
+    return;
+  } else selection.push(id);
+  sauverSelection();
+  majSelection();
+}
+
+function majSelection() {
+  const n = selection.length;
+  $("#nb-comparer").hidden = !n;
+  $("#nb-comparer").textContent = n;
+  $("#barre-comparer").hidden = !n;
+  $("#texte-comparer").textContent =
+    n === 1 ? "1 école choisie · choisis-en au moins une autre" : `${n} écoles choisies`;
+  $("#aller-comparer").disabled = n < 2;
+  document.querySelectorAll(".carte[data-id]").forEach((c) => {
+    const choisie = selection.includes(c.dataset.id);
+    c.classList.toggle("choisie", choisie);
+    const b = c.querySelector(".bouton-comparer");
+    b.classList.toggle("choisi", choisie);
+    b.textContent = choisie ? "✓ À comparer" : "＋ Comparer";
+    b.setAttribute("aria-pressed", choisie);
+  });
+}
+
+const liste = (items) => (items.length ? `<ul>${items.map((i) => `<li>${echapper(i)}</li>`).join("")}</ul>` : "—");
+const serieCourte = (s) => s.replaceAll("_", " ").replace("TECH IND", "Tech. ind.").replace("TECH TERT", "Tech. tert.");
+
+async function afficherComparaison() {
+  const vide = selection.length < 2;
+  $("#comparaison-vide").hidden = !vide;
+  $("#comparaison").hidden = vide;
+  if (vide) return;
+
+  const profil = lireProfil();
+  const params = new URLSearchParams({ ids: selection.join(",") });
+  if (profil.niveau) params.set("niveau", profil.niveau);
+  if (profil.serie) params.set("serie", profil.serie);
+  const rep = await fetch(`/api/comparer?${params}`);
+  const ecoles = rep.ok ? await rep.json() : [];
+  // Retire de la sélection les écoles qui n'existent plus dans la base.
+  if (ecoles.length !== selection.length) {
+    selection = ecoles.map((e) => e.id);
+    sauverSelection();
+    majSelection();
+  }
+  if (ecoles.length < 2) {
+    $("#comparaison-vide").hidden = false;
+    $("#comparaison").hidden = true;
+    return;
+  }
+  derniereComparaison = ecoles;
+  const aProfil = Boolean(profil.niveau || profil.serie);
+
+  const lignes = [
+    ["Type", (e) => echapper(referentiel.categories[e.categorie])],
+    ["Statut", (e) => echapper(e.statut)],
+    ["Ville", (e) => `📍 ${echapper(e.ville)}<br><small>${echapper(e.region)}</small>`],
+    ["Tutelle", (e) => echapper(e.tutelle)],
+    ["Admission", (e) => `${e.synthese.modes_admission.map((m) => `<span class="badge ${m === "concours" ? "concours" : ""}">${m}</span>`).join(" ")}<br><small>${echapper(e.admission)}</small>`],
+    ["Niveau d'entrée min.", (e) => echapper(e.synthese.niveau_min_label.split(" (")[0])],
+    ["Séries acceptées (après le Bac)", (e) => (e.synthese.series_acceptees.length ? echapper(e.synthese.series_acceptees.map(serieCourte).join(", ")) : "Toutes")],
+    ["Diplômes", (e) => echapper(e.synthese.diplomes.join(", "))],
+    ["Durées", (e) => echapper(e.synthese.durees.join(" ; "))],
+    ["Frais indicatifs", (e) => `💰 ${echapper(e.frais_indicatifs)}`],
+    ["Domaines", (e) => liste(e.synthese.domaines)],
+    ["Filières", (e) => liste(e.filieres.map((f) => f.nom))],
+  ];
+  if (aProfil) {
+    lignes.splice(1, 0, [
+      "Pour mon profil",
+      (e) => {
+        const n = e.synthese.filieres_accessibles.length;
+        return n
+          ? `<span class="ok">✓ ${n} filière(s) accessible(s)</span>`
+          : `<span class="ko">✗ Aucune filière accessible</span>`;
+      },
+    ]);
+  }
+  lignes.push(["Site web", (e) => (e.site ? `<a href="${echapper(e.site)}" target="_blank" rel="noopener">${echapper(e.site.replace(/^https?:\/\//, ""))}</a>` : "—")]);
+
+  $("#tableau-comparaison").innerHTML = `
+    <thead><tr><th></th>${ecoles.map((e) => `<th>
+      <span class="sigle">${echapper(e.sigle)}</span>${echapper(e.nom)}<br>
+      <button class="retirer" data-retirer="${echapper(e.id)}">✕ retirer</button></th>`).join("")}</tr></thead>
+    <tbody>${lignes.map(([titre, cellule]) => `<tr><th>${titre}</th>${ecoles.map((e) => `<td>${cellule(e)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+}
+
+function lienComparaison() {
+  return `${location.origin}${location.pathname}#comparer=${selection.join(",")}`;
 }
 
 async function ouvrirFiche(id) {
@@ -192,7 +307,14 @@ async function ouvrirFiche(id) {
       </tbody>
     </table>
     ${e.verifie ? "" : "<p><small>⚠️ Fiche en cours de vérification : confirme les informations auprès de l'établissement.</small></p>"}
-    <div class="actions-fiche"><button id="demander">💬 Demander conseil sur cette école</button></div>`;
+    <div class="actions-fiche">
+      <button id="demander">💬 Demander conseil sur cette école</button>
+      <button id="fiche-comparer"></button>
+    </div>`;
+  const boutonComparer = $("#fiche-comparer");
+  const majBouton = () => (boutonComparer.textContent = selection.includes(e.id) ? "✓ Dans la comparaison" : "⚖️ Ajouter à la comparaison");
+  majBouton();
+  boutonComparer.addEventListener("click", () => { basculerComparaison(e.id); majBouton(); });
   $("#demander").addEventListener("click", () => {
     $("#fiche").close();
     basculer("chat");
@@ -210,6 +332,7 @@ function basculer(vue) {
   });
   document.querySelectorAll(".vue").forEach((v) => v.classList.toggle("active", v.id === `vue-${vue}`));
   if (vue === "explorer") chercher();
+  if (vue === "comparer") afficherComparaison();
 }
 
 // ---------- Initialisation ----------
@@ -223,14 +346,56 @@ async function init() {
   $("#villes").innerHTML = villes.map((v) => `<option value="${v}">`).join("");
   $("#avertissement").textContent = referentiel.avertissement;
   $("#mode").textContent = referentiel.ia
-    ? "Réponses générées par IA à partir de la base Figea — vérifie toujours auprès des écoles."
-    : "Mode hors-ligne : l'IA n'est pas configurée, les réponses viennent directement de la base Figea.";
+    ? "Réponses générées par IA à partir de la base Feegea — vérifie toujours auprès des écoles."
+    : "Mode hors-ligne : l'IA n'est pas configurée, les réponses viennent directement de la base Feegea.";
 
   restaurerProfil();
   majResume();
   $("#form-profil").addEventListener("change", () => {
     majResume();
     if ($("#vue-explorer").classList.contains("active")) chercher();
+    if ($("#vue-comparer").classList.contains("active")) afficherComparaison();
+  });
+
+  // Comparaison : sélection mémorisée, ou reçue via un lien partagé (#comparer=id1,id2).
+  try { selection = JSON.parse(localStorage.getItem(STOCKAGE_COMPARAISON) || "[]"); } catch {}
+  const partage = location.hash.match(/^#comparer=(.+)$/);
+  if (partage) {
+    selection = decodeURIComponent(partage[1]).split(",").filter(Boolean).slice(0, MAX_COMPARAISON);
+    sauverSelection();
+    history.replaceState(null, "", location.pathname);
+    basculer("comparer");
+  }
+  majSelection();
+  $("#aller-comparer").addEventListener("click", () => basculer("comparer"));
+  document.querySelectorAll("[data-aller]").forEach((b) => b.addEventListener("click", () => basculer(b.dataset.aller)));
+  $("#tableau-comparaison").addEventListener("click", (ev) => {
+    const id = ev.target.dataset?.retirer;
+    if (!id) return;
+    basculerComparaison(id);
+    afficherComparaison();
+  });
+  $("#vider-comparaison").addEventListener("click", () => {
+    selection = [];
+    sauverSelection();
+    majSelection();
+    afficherComparaison();
+  });
+  $("#partager-comparaison").addEventListener("click", async (ev) => {
+    const lien = lienComparaison();
+    try {
+      if (navigator.share) await navigator.share({ title: "Comparaison d'écoles – Feegea", url: lien });
+      else {
+        await navigator.clipboard.writeText(lien);
+        ev.target.textContent = "✓ Lien copié";
+        setTimeout(() => (ev.target.textContent = "🔗 Copier le lien"), 2000);
+      }
+    } catch {}
+  });
+  $("#avis-comparaison").addEventListener("click", () => {
+    const noms = derniereComparaison.map((e) => `${e.nom} (${e.sigle})`).join(", ");
+    basculer("chat");
+    poser(`Compare pour moi ces établissements : ${noms}. Lequel me conseilles-tu selon mon profil, et pourquoi ?`);
   });
   $("#form-profil").addEventListener("input", () => {
     clearTimeout(minuteur);

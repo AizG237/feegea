@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Figea – Orientation au Cameroun</title>
-  <meta name="description" content="Figea t'aide à trouver l'école et la filière qui te correspondent au Cameroun : universités, grandes écoles, IPES et formations professionnelles.">
+  <title>Feegea – Orientation au Cameroun</title>
+  <meta name="description" content="Feegea t'aide à trouver l'école et la filière qui te correspondent au Cameroun : universités, grandes écoles, IPES et formations professionnelles.">
   <meta name="theme-color" content="#0b7a4b">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
   <link rel="stylesheet" href="styles.css">
@@ -14,13 +14,14 @@
     <div class="marque">
       <span class="logo" aria-hidden="true">F</span>
       <div>
-        <h1>Figea</h1>
+        <h1>Feegea</h1>
         <p>Trouve ton école et ta filière au Cameroun</p>
       </div>
     </div>
     <nav class="onglets" role="tablist">
       <button role="tab" class="onglet actif" data-vue="chat" aria-selected="true">💬 Conseiller</button>
       <button role="tab" class="onglet" data-vue="explorer" aria-selected="false">🔎 Explorer</button>
+      <button role="tab" class="onglet" data-vue="comparer" aria-selected="false">⚖️ Comparer <span id="nb-comparer" class="pastille" hidden></span></button>
     </nav>
   </header>
 
@@ -55,7 +56,7 @@
     <section id="vue-chat" class="vue active" aria-label="Conseiller d'orientation">
       <div id="messages" class="messages" aria-live="polite">
         <div class="bulle assistant">
-          <p>Bonjour 👋 Je suis <strong>Figea</strong>, ton conseiller d'orientation.</p>
+          <p>Bonjour 👋 Je suis <strong>Feegea</strong>, ton conseiller d'orientation.</p>
           <p>Dis-moi ce que tu aimerais faire plus tard, ton niveau et ta série : je te propose des écoles publiques, des IPES et des formations professionnelles adaptées.</p>
         </div>
       </div>
@@ -80,6 +81,28 @@
       </div>
       <p id="compteur" class="compteur"></p>
       <div id="resultats" class="cartes"></div>
+      <div id="barre-comparer" class="barre-comparer" hidden>
+        <span id="texte-comparer"></span>
+        <button id="aller-comparer">Comparer →</button>
+      </div>
+    </section>
+
+    <section id="vue-comparer" class="vue" aria-label="Comparer des écoles">
+      <div id="comparaison-vide" class="vide">
+        <p><strong>Compare jusqu'à 4 écoles côte à côte.</strong></p>
+        <p>Dans l'onglet 🔎 Explorer, appuie sur « ＋ Comparer » sur les écoles qui t'intéressent, puis reviens ici.</p>
+        <button class="bouton" data-aller="explorer">Choisir des écoles</button>
+      </div>
+      <div id="comparaison" hidden>
+        <div class="actions-comparaison">
+          <button class="bouton" id="avis-comparaison">💬 Demander l'avis du conseiller</button>
+          <button class="bouton secondaire" id="partager-comparaison">🔗 Copier le lien</button>
+          <button class="bouton secondaire" id="vider-comparaison">Tout retirer</button>
+        </div>
+        <div class="tableau-defilant">
+          <table id="tableau-comparaison" class="tableau-comparaison"></table>
+        </div>
+      </div>
     </section>
   </main>
 

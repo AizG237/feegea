@@ -54,7 +54,7 @@ body {
 
 .onglets { display: flex; gap: 4px; max-width: 960px; margin: 12px auto 0; }
 .onglet {
-  flex: 1; border: 0; padding: 10px; font-size: 1rem; cursor: pointer;
+  flex: 1; border: 0; padding: 10px 4px; font-size: .95rem; white-space: nowrap; cursor: pointer;
   background: transparent; color: #fff; opacity: .75; border-radius: 10px 10px 0 0;
 }
 .onglet.actif { background: var(--fond); color: var(--vert); opacity: 1; font-weight: 600; }
@@ -151,10 +151,56 @@ dialog td, dialog th { border-bottom: 1px solid var(--bord); padding: 6px 4px; t
   margin-top: 16px; border: 0; background: var(--vert); color: #fff;
   padding: 8px 18px; border-radius: 10px; cursor: pointer;
 }
-.actions-fiche { margin-top: 12px; }
+.actions-fiche { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
 .actions-fiche button {
   border: 1px solid var(--vert); background: transparent; color: var(--vert);
   padding: 6px 12px; border-radius: 10px; cursor: pointer;
 }
+
+.carte .bas { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 6px; }
+.bouton-comparer {
+  border: 1px solid var(--vert); background: transparent; color: var(--vert);
+  border-radius: 999px; padding: 4px 12px; font-size: .8rem; cursor: pointer;
+}
+.bouton-comparer.choisi { background: var(--vert); color: #fff; }
+.carte.choisie { border-color: var(--vert); box-shadow: 0 0 0 1px var(--vert); }
+
+.pastille {
+  display: inline-block; min-width: 20px; padding: 0 6px; border-radius: 999px;
+  background: var(--jaune); color: var(--vert-fonce); font-size: .75rem; font-weight: 700;
+}
+
+.barre-comparer {
+  position: sticky; bottom: 12px; margin-top: 16px; display: flex; gap: 12px;
+  justify-content: space-between; align-items: center;
+  background: var(--vert-fonce); color: #fff; padding: 10px 14px; border-radius: var(--rayon);
+  box-shadow: 0 4px 16px rgb(0 0 0 / .2);
+}
+.barre-comparer button { border: 0; background: var(--jaune); color: var(--vert-fonce); font-weight: 700; padding: 8px 14px; border-radius: 10px; cursor: pointer; }
+
+.bouton {
+  border: 0; background: var(--vert); color: #fff; padding: 8px 14px;
+  border-radius: 10px; cursor: pointer; font: inherit; font-size: .9rem;
+}
+.bouton.secondaire { background: transparent; color: var(--vert); border: 1px solid var(--vert); }
+.vide { text-align: center; padding: 32px 16px; color: var(--doux); }
+.actions-comparaison { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+
+.tableau-defilant { overflow-x: auto; border: 1px solid var(--bord); border-radius: var(--rayon); background: var(--surface); }
+.tableau-comparaison { border-collapse: collapse; width: 100%; min-width: 560px; font-size: .85rem; }
+.tableau-comparaison th, .tableau-comparaison td {
+  padding: 8px 10px; border-bottom: 1px solid var(--bord); text-align: left; vertical-align: top;
+}
+.tableau-comparaison thead th { background: var(--fond); }
+.tableau-comparaison thead .sigle { color: var(--vert); font-weight: 700; display: block; }
+.tableau-comparaison tbody th {
+  position: sticky; left: 0; background: var(--surface); color: var(--doux);
+  font-weight: 600; width: 120px; min-width: 110px;
+}
+.tableau-comparaison td { min-width: 170px; }
+.tableau-comparaison ul { margin: 0; padding-left: 16px; }
+.tableau-comparaison .retirer { border: 0; background: none; color: var(--rouge); cursor: pointer; font-size: .75rem; padding: 0; }
+.ok { color: var(--vert); font-weight: 600; }
+.ko { color: var(--rouge); font-weight: 600; }
 
 .pied { text-align: center; font-size: .75rem; color: var(--doux); padding: 12px 16px 20px; max-width: 960px; margin: 0 auto; }

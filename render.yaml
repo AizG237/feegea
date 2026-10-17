@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: figea
+    name: feegea
     runtime: node
     plan: free
     region: frankfurt
@@ -13,9 +13,9 @@ services:
         value: "22"
       - key: ANTHROPIC_API_KEY
         sync: false
-      - key: FIGEA_MODEL
+      - key: FEEGEA_MODEL
         value: claude-opus-5-5
-      - key: FIGEA_EFFORT
+      - key: FEEGEA_EFFORT
         value: low
-      - key: FIGEA_RATE_LIMIT
+      - key: FEEGEA_RATE_LIMIT
         value: "30"

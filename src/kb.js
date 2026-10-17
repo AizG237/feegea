@@ -1,4 +1,4 @@
-// Base de connaissances Figea : chargement des données et moteur de recherche local.
+// Base de connaissances Feegea : chargement des données et moteur de recherche local.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -188,4 +188,35 @@ export function libelleNiveau(code) {
 
 export function libelleSerie(code) {
   return referentiel.series.find((s) => s.code === code)?.label || code;
+}
+
+const ORDRE_ADMISSION = ["concours", "test", "dossier", "libre"];
+
+/** Synthèse d'une école pour le tableau de comparaison, évaluée pour un profil donné. */
+export function syntheseComparaison(e, profil = {}) {
+  const uniques = (liste) => [...new Set(liste)];
+  const accessibles = e.filieres.filter((f) => filiereCompatible(f, profil));
+  const niveauMin = e.filieres.reduce(
+    (min, f) => ((rangNiveau[f.niveau] ?? 0) < (rangNiveau[min] ?? 99) ? f.niveau : min),
+    null,
+  );
+  const series = e.filieres.some((f) => f.niveau === "BAC" && !f.series.length)
+    ? []
+    : uniques(e.filieres.flatMap((f) => f.series));
+  return {
+    ...e,
+    synthese: {
+      niveau_min: niveauMin,
+      niveau_min_label: libelleNiveau(niveauMin),
+      series_acceptees: series,
+      diplomes: uniques(e.filieres.flatMap((f) => f.diplomes)),
+      domaines: uniques(e.filieres.map((f) => f.domaine)),
+      modes_admission: uniques(e.filieres.map((f) => f.admission)).sort(
+        (a, b) => ORDRE_ADMISSION.indexOf(a) - ORDRE_ADMISSION.indexOf(b),
+      ),
+      durees: uniques(e.filieres.map((f) => f.duree)),
+      nb_filieres: e.filieres.length,
+      filieres_accessibles: accessibles.map((f) => f.nom),
+    },
+  };
 }

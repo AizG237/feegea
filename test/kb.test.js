@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { ecoles, filiereCompatible, rechercher, referentiel } from "../src/kb.js";
+import { ecoles, filiereCompatible, rechercher, referentiel, syntheseComparaison } from "../src/kb.js";
 
 const ids = (r) => r.map((x) => x.ecole.id);
 
@@ -48,4 +48,14 @@ test("le filtre ville garde les réseaux nationaux", () => {
   assert.ok(r.includes("essec-douala"));
   assert.ok(r.includes("ipes-bts-general"));
   assert.ok(!r.includes("uy1"));
+});
+
+test("la synthèse de comparaison indique les filières accessibles au profil", () => {
+  const ensp = ecoles.find((e) => e.id === "ensp-yaounde");
+  const pourA = syntheseComparaison(ensp, { niveau: "BAC", serie: "A" }).synthese;
+  const pourC = syntheseComparaison(ensp, { niveau: "BAC", serie: "C" }).synthese;
+  assert.equal(pourA.filieres_accessibles.length, 0);
+  assert.ok(pourC.filieres_accessibles.length > 0);
+  assert.equal(pourC.niveau_min, "BAC");
+  assert.deepEqual(pourC.modes_admission, ["concours"]);
 });

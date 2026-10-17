@@ -1,4 +1,4 @@
-// Chatbot Figea : réponses générées par Claude à partir de la base de connaissances,
+// Chatbot Feegea : réponses générées par Claude à partir de la base de connaissances,
 // avec un mode local (sans clé API) basé sur le moteur de recherche.
 import Anthropic from "@anthropic-ai/sdk";
 import {
@@ -11,15 +11,15 @@ import {
   referentiel,
 } from "./kb.js";
 
-const MODEL = process.env.FIGEA_MODEL || "claude-opus-5-5";
-const EFFORT = process.env.FIGEA_EFFORT || "low";
-const FALLBACKS = process.env.FIGEA_FALLBACKS !== "off";
+const MODEL = process.env.FEEGEA_MODEL || "claude-opus-5-5";
+const EFFORT = process.env.FEEGEA_EFFORT || "low";
+const FALLBACKS = process.env.FEEGEA_FALLBACKS !== "off";
 
 export const iaActive = Boolean(process.env.ANTHROPIC_API_KEY);
 const client = iaActive ? new Anthropic() : null;
 
 // Le prompt système est figé au démarrage : il est mis en cache par l'API (prompt caching).
-const SYSTEME = `Tu es Figea, un conseiller d'orientation scolaire et universitaire pour les élèves et étudiants du Cameroun.
+const SYSTEME = `Tu es Feegea, un conseiller d'orientation scolaire et universitaire pour les élèves et étudiants du Cameroun.
 
 Ta mission : aider chaque personne à trouver les écoles et filières adaptées à son niveau (sans diplôme, CEP, BEPC, Probatoire, Bac, BTS/HND, Licence…), à sa série (A, C, D, E, TI, techniques industrielles ou tertiaires, GCE A Level Science/Arts/Commercial), à ses centres d'intérêt, à sa ville et à son budget. Tu fais connaître non seulement les grandes écoles à concours, mais aussi les universités d'État, les IPES (instituts privés d'enseignement supérieur) et les formations professionnelles (CQP, DQP, CAP, BTS, HND) qui sont souvent moins visibles.
 
@@ -139,7 +139,7 @@ export async function repondreLocal({ historique, profil = {} }, onTexte) {
   let resultats = rechercher({ ...filtre, limite: 6 });
   if (!resultats.length) resultats = rechercher({ ...filtre, q: "", limite: 6 });
 
-  let texte = `_Mode hors-ligne : réponse générée à partir de la base Figea, sans IA._\n\n`;
+  let texte = `_Mode hors-ligne : réponse générée à partir de la base Feegea, sans IA._\n\n`;
   if (!resultats.length) {
     texte +=
       "Je n'ai trouvé aucune formation correspondant exactement à ce profil. Essaie d'élargir ta recherche (autre ville, autre domaine) ou précise ton niveau et ta série.";

@@ -1,6 +1,6 @@
 {
   "version": "2026-10-mvp",
-  "avertissement": "Données de démarrage compilées pour le MVP Figea. Les frais, dates de concours et listes de filières changent chaque année : chaque fiche doit être vérifiée auprès de l'établissement ou du MINESUP/MINEFOP avant d'être considérée comme fiable (champ 'verifie').",
+  "avertissement": "Données de démarrage compilées pour le MVP Feegea. Les frais, dates de concours et listes de filières changent chaque année : chaque fiche doit être vérifiée auprès de l'établissement ou du MINESUP/MINEFOP avant d'être considérée comme fiable (champ 'verifie').",
   "ecoles": [
     {
       "id": "ensp-yaounde",
